@@ -2,37 +2,259 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
+  background-color: #f0f8ff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* ギャップを少し小さく */
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  font-size: 0.95rem; /* フォーム全体のフォントサイズを調整 */
+}
+
+form div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+label {
+  width: 150px; /* ラベルの幅を調整 */
+  text-align: right;
+  font-size: 1rem; /* ラベルのフォントサイズ */
+}
+
+input, select {
+  padding: 8px; /* パディングを調整 */
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem; /* 入力フィールドのフォントサイズ */
+}
+
+/* チェックボックスグループのスタイル */
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #eee;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.checkbox-group label {
+  width: auto; /* ラベルの幅を自動調整 */
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  font-size: 0.95rem; /* チェックボックスラベルのフォントサイズ */
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-right: 5px;
+  transform: scale(1.0); /* チェックボックスのサイズを調整 */
+}
+
+/* チャットメッセージのフォントサイズ調整 */
+.message p {
+  font-size: 0.95rem; /* チャットメッセージのフォントサイズ */
+  line-height: 1.6;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
   color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #0056b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-buttons {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-top: 30px;
+  width: 80%; /* 幅を広げる */
+  max-width: 500px; /* 最大幅を設定 */
+}
+
+.menu-buttons button {
+  padding: 20px 30px; /* パディングを増やしてボタンを大きく */
+  font-size: 1.5rem; /* フォントサイズを大きく */
+  height: 100px; /* 高さを固定 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影を追加 */
+  border-radius: 15px; /* 角を丸く */
+  background-color: #e0f7fa; /* 背景色を変更 */
+  color: #00796b; /* 文字色を変更 */
+  border: 2px solid #00796b; /* ボーダーを追加 */
+}
+
+.menu-buttons button:hover {
+  background-color: #b2ebf2; /* ホバー時の背景色 */
+  transform: translateY(-3px); /* 少し浮き上がるアニメーション */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* 影を濃く */
+}
+
+.Chat {
+  width: 80%;
+  max-width: 800px;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ccc;
+}
+
+.finish-button {
+  background-color: #dc3545;
+}
+
+.finish-button:hover {
+  background-color: #c82333;
+}
+
+.message-area {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message {
+  padding: 10px 15px;
+  border-radius: 20px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.message.user {
+  background-color: #007bff;
+  color: white;
+  align-self: flex-end;
+}
+
+.message.ai {
+  background-color: #e9e9eb;
+  color: #333;
+  align-self: flex-start;
+}
+
+.input-area {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.input-area input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+}
+
+.input-area button {
+  margin-left: 10px;
+}
+
+.Result {
+  width: 90%;
+  max-width: 900px;
+  margin: 20px auto; /* 中央寄せと上下の余白 */
+  padding: 30px;
+  border: 1px solid #e0e0e0;
+  border-radius: 15px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.Result h2 {
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 25px;
+  font-size: 2.2rem;
+}
+
+.summary-area, .evaluation-area {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  border: 1px solid #e9ecef;
+}
+
+.summary-area h3, .evaluation-area h3 {
+  color: #343a40;
+  margin-bottom: 15px;
+  font-size: 1.6rem;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 8px;
+}
+
+.summary-area div, .evaluation-area div {
+  line-height: 1.8; /* 行の高さを調整 */
+  font-size: 1.1rem;
+  color: #495057;
+}
+
+.return-button {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  background-color: #28a745;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.return-button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
 }
