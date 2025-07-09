@@ -9,7 +9,8 @@ const Chat = ({ theme, onFinish, userInfo }) => { // userInfoを受け取る
     const fetchInitialGuidance = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch('http://localhost:3001/api/initial-guidance', {
+        const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+        const response = await fetch(`${apiUrl}/api/initial-guidance`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -44,7 +45,8 @@ const Chat = ({ theme, onFinish, userInfo }) => { // userInfoを受け取る
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://localhost:3001/api/chat', {
+      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+      const response = await fetch(`${apiUrl}/api/chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
